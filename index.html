@@ -9,7 +9,7 @@
     <script src="./js/script.js"></script>
     <title>Document</title>
 </head>
-<body style="background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 54%, rgba(44,83,100,1) 100%);">
+<body onload="initialize()" style="background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 54%, rgba(44,83,100,1) 100%);">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center py-5 judul">
@@ -31,7 +31,7 @@
                 </div>
                 <!-- START TABLE -->
                 <div class="col-md-9 mx-auto">
-                    <table class="table table-dark">
+                    <table class="table table-dark" id="tableMenu">
                         <thead class="text-center">
                             <th>No</th>
                             <th>Data Makanan</th>
