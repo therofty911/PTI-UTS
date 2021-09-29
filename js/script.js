@@ -58,8 +58,3 @@ function initialize(){
 });
 }
 
-
-function hapus(id){
-    data.pop(id);
-    initialize();
-}
