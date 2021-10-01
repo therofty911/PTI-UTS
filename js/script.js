@@ -43,6 +43,8 @@
 //     tbody.appendChild(newRow);
 
 // }
+
+var arrItems = [];
 function initialize(){
     $(document).ready(function(){
     $.getJSON("menu.json", function(data){
@@ -59,6 +61,27 @@ function initialize(){
     });
 });
 
+function handleSubmit(event) {
+  event.preventDefault();
+
+
+  const data = new FormData(event.target);
+
+  const Nama = data.get('foodName');
+  arrItems.push(Nama);
+  // console.log(arrItems);
+  // console.log(Nama);
+  localStorage.setItem("Data_Makanan", JSON.stringify(arrItems));
+  var item = JSON.parse(localStorage.getItem("Data_Makanan")); 
+
+  // arrItems = JSON.stringify(Nama); 	// Fill JSON data to an array.
+
+  console.log({ Nama });
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
 // showTheList(json);
 // addListFood(item);
 // function store(){
@@ -68,8 +91,52 @@ function initialize(){
 //         localStorage.setItem("Data_Makanan", JSON.stringify(arrItems)); // Save the obj as string
 //         var item = JSON.parse(localStorage.getItem("Data_Makanan")); 
 //    }
+  // document.getElementById('formsubmit').onsubmit = function(form){
+  //   form.preventDefault();
+  //   let item ={
+  //     Nama: '',
+  //     isItemValid: function(){
+  //       if(this.Nama !== ''){
+  //         return true;
+  //       }
+  //       return false;
+  //     },
+  //     addToArray: function(){
+  //       var foodName = document.getElementById('foodName').value;
+  //       arrItems.push(item);
+  //     },
+  //     fillProperty: function(dataSource){
+  //       item.Nama = dataSource.target['foodName'].value;
+  //     }
+  //   }
+  //   console.log(item.Nama);
+  //   item.fillProperty(form);
+  //   if(item.isItemValid()){
+  //     if(item.Nama !== ''){
+  //       alert("fill this input");
+  //     }else{
+  //       document.getElementById('formsubmit').reset();
+  //               item.addToArray();
+  //               alert("You are successfull reqruit your matte");
+  //     }
+  //   }
+  // }
+
 
 }
+
+// function store(){
+//   var foodName = document.getElementById('foodName').value;
+//   arrItems.push(foodName);
+//   var pval = json.parse();
+  
+//   for(i = 0; i < arrItems.length; i++){
+//     pval = pval + arrItems[i];
+//   }
+//   document.getElementById('pText').innerHTML = pval;
+//   console.log(pval);
+// }
+
 
 var food = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
@@ -83,7 +150,7 @@ var food = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Mic
     food.send();
 
     function showTheList(json) {
-        var arrItems = [];
+        
         arrItems = JSON.parse(json); 	// Fill JSON data to an array.
         console.log(arrItems);
 
@@ -94,44 +161,30 @@ var food = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Mic
     }
 
         
-    function store(){
-        arrItems[x] = document.getElementById("foodName").value;
-        alert("Element: " + arrItems[x] + " Added at index " + x);
-        x++;
-        console.log(arrItems);
-        document.getElementById("foodName").value = "";
-    }
+    // function store(){
+    //     arrItems[x] = document.getElementById("foodName").value;
+    //     alert("Element: " + arrItems[x] + " Added at index " + x);
+    //     x++;
+    //     console.log(arrItems);
+    //     document.getElementById("foodName").value = "";
+    // }
 
-    // $("#create").on("click", (e) => {
-    //     if (e.which === 13 && $("input").val() !== "") {
-    //       todo = $("input").val();
-    //       let todosData = localStorage.getItem("todos");
-    //       if (todosData == null) {
-    //         todos = [];
-    //       } else {
-    //         todos = JSON.parse(todosData);
-    //       }
-    //       todos.push(todo);
-    //       localStorage.setItem("todos", JSON.stringify(todos));
-    //       $("input").val("");
-    //       checkTodos();
-    //     }
-    //   });
 
-      $( "#create" ).on( "click", "button", function() {
-          food = $("#create").val();
-          let menuData = localStorage.getItem("menus");
-          if (menuData == null) {
-            menus = [];
-          } else {
-            menus = JSON.parse(menuData);
-          }
-          menus.push(food);
-          localStorage.setItem("menus", JSON.stringify(menus));
-          $("#create").val("");
-          checkTodos();
-        }
-      );
+
+      // $( "#create" ).on( "click", "button", function() {
+      //     food = $("#create").val();
+      //     let menuData = localStorage.getItem("menus");
+      //     if (menuData == null) {
+      //       menus = [];
+      //     } else {
+      //       menus = JSON.parse(menuData);
+      //     }
+      //     menus.push(food);
+      //     localStorage.setItem("menus", JSON.stringify(menus));
+      //     $("#create").val("");
+      //     checkTodos();
+      //   }
+      // );
 
     // if(window.localStorage !== undefined){
     //     var arrItems = [];

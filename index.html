@@ -21,7 +21,7 @@
             <div class="col-12 card py-5" style="box-shadow: 0px 1px 63px 5px rgba(0,0,0,0.75);">
                 <div class="col-lg-6 center-block py-5 mx-auto center-block">
                     <div class="input-group mb-3">
-                        <form action="" id="formsubmit" class="row g-3 col-9 mx-auto center-block">
+                        <form action="" id="formsubmit" class="row g-3 col-9 mx-auto center-block" onsubmit="submitItem()">
                             <!-- <div class="col-auto">
                                 <label for="foodName" class="form-label">Food Name</label>
                                 <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" aria-describedby="basic-addon2" id="foodName">
@@ -31,11 +31,14 @@
                             </div> -->
                             <div class="col-lg-9 col-7">
                                 <label for="foodName" class="">Enter Food Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" aria-describedby="basic-addon2" id="foodName">
+                                <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" name="foodName" value="" aria-describedby="basic-addon2" id="foodName">
                               </div>
                               <div class="col-auto">
-                                <button type="submit" class="btn btn-primary mt-4" id="create" onclick="store()">Create</button>
+                                <button type="submit" class="btn btn-primary mt-4" id="create">Create</button>
+                                <!-- <input type="submit" id="btnSubmit" value="Reqruit" class="sub"/> -->
+
                               </div>
+                              <p id="pText"></p>
                         </form>
                     </div>
                 </div>
