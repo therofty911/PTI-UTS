@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.judul{
+    color: white;
+
+}
+
+table {
+    counter-reset: rowNumber;
+  }
+  
+  table tbody tr {
+    counter-increment: rowNumber;
+  }
+  
+  table tbody tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+  }
+
+.validation-error{
+    color: red;
+}
