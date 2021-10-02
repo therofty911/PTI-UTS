@@ -10,10 +10,16 @@ function onFormSubmit() {
 }
 
 function readFormData() {
-    var formData = {};
+    var formData = ['Martabak', 'gorengan', 'air'];
     localStorage.setItem("Data_Makanan", JSON.stringify(formData));
     
     formData["foodName"] = document.getElementById("foodName").value;
+    formData.push(foodName);
+    var pval = "";
+    for(i = 0; i < formData.length; i++){
+        pval = pval + formData[i];
+    }
+    console.log(formData);
     return formData;
 }
 
