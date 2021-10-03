@@ -190,10 +190,15 @@ searchtextbox.addEventListener("input", function(){
 })
 
 
-var ran = taskObj.length;
+
 function random(item){
-var item = Math.floor(Math.random() * ran);
-  console.log(taskObj[item]);
+    var ran = taskObj.length;
+    var test = [];
+    for(var i = 0; i<3; i++){
+        var item = Math.floor(Math.random() * ran);
+        test.push(taskObj[item]);
+        console.log(test);
+    }
 }
 
 
