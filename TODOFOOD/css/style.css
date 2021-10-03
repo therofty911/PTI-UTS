@@ -13,7 +13,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
-body{font-family: 'Roboto-Regular';background: #f5f5f5;}
+body{font-family: 'Roboto-Regular';}
 header .navbar{padding: .5rem 0;}
 header nav.navbar .navbar-brand{color:#fff;}
 section.todo-outer {
@@ -29,7 +29,7 @@ section.todo-outer h1 {
     width: 100%;
     float: left;
     padding: 40px;
-    box-shadow: 0px 0px 10px #c1c1c1;
+    box-shadow: 0px 1px 63px 5px rgba(0,0,0,0.75);
     background: #fff;
 }
 table tr td button {
