@@ -191,20 +191,34 @@ searchtextbox.addEventListener("input", function(){
 
 
 function random(item){
-    var ran = taskObj.length;
-    var test = [];
     let webtask = localStorage.getItem("localtask");
+    let taskObj = JSON.parse(webtask);  
+    let tempcon = taskObj;
+    let ran = tempcon.length;
+    let test = [];
     if(webtask == null){
         console.log("list is empty");
         return false;
     }
     else{
-        for(var i = 0; i<3; i++){
-            var item = Math.floor(Math.random() * ran);
-            test.push(taskObj[item]);
-            console.log(test, test[1], test[2], test[3]);
+        if(taskObj.length<3){
+            for(let i = 0; i<3; i++){
+                var item = Math.floor(Math.random() * ran);
+                test.push(tempcon[item]);
+                console.log(test[0], test[1], test[2]);
+            }
+            addtorandom(test);
         }
-        addtorandom(test);
+        else if(taskObj.length>=3){
+            for(let i = 0; i<3; i++){
+                var item = Math.floor(Math.random() * (ran));
+                test.push(tempcon[item]);
+                console.log(item, test[0], test[1], test[2]);
+                ran--;
+                tempcon.splice(item,1);
+            }
+            addtorandom(test);
+        }
     }
 }
 
@@ -219,6 +233,7 @@ function addtorandom(test){
     //     dinner.innerHTML = test[3];
     // }
     //else{
+        console.log(test);
         document.getElementById("breakfast").value = test[0].task_name;
         document.getElementById("lunch").value = test[1].task_name;
         document.getElementById("dinner").value = test[2].task_name;
