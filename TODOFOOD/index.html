@@ -1,64 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todo List</title>
+  <title>food List</title>
   <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body style="background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 54%, rgba(44,83,100,1) 100%);">
-  <header class="bg-dark mb-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <nav class="navbar justify-content-between">
-            <a class="navbar-brand">Menu For Food</a>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                id="searchtextbox" />
-            </form>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section class="todo-outer">
+  <section class="food-outer">
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-sm-12 col-md-12 text-center">
-          <h1 style="color: white;">DATA MAKANAN</h1>
-          <div class="todo-inner">
-            <div class="form-row mx-auto center-block">
+          <h1 style="color: white;">List Food & Drinks</h1>
+          <div class="food-inner">
+            <div class="form-row mx-auto center-block text-center">
               <div class="col-8 mr-sm-2">
                 <!-- <input type="text" class="form-control" placeholder="Enter your task" id="addtaskinput" /> -->
                 <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" name="addtaskinput" id="addtaskinput" value="" aria-describedby="basic-addon2" >
                 <input type="hidden" id="saveindex">
               </div>
-              <!-- <button type="button" class="btn btn-success mr-sm-2" id="addtaskbtn">
-                Add Task
-              </button> -->
               <button type="button" class="btn btn-primary mr-sm-2" id="addtaskbtn">
                 Create
               </button>
               <button type="button" class="btn btn-success mr-sm-2" id="savetaskbtn" style="display: none;">
                 Edit Food Name
               </button>
-              <!-- <button type="button" class="btn btn-success mr-sm-2" id="savetaskbtn" style="display: none;">
-                Save Task
-              </button> -->
-              <button type="button" class="btn btn-success mr-sm-2" id="addtaskbtn" onclick="random()">
+              <!-- <button type="button" class="btn btn-success mr-sm-2" id="addtaskbtn" onclick="random()">
                 random
-              </button>
+              </button> -->
             </div>
-            <div class="to-do-output">
-              <table class="table table-dark mt-3 mb-0" id="addedtasklist">
+            <div class="food-output">
+              <table class="table table-dark mt-3 mb-0 " id="addedtasklist">
                 <thead class="text-center" id="kepala">
                   <tr>
-                    
                     <th>No</th>
                     <th>Data Makanan</th>
                     <th>Action</th>
@@ -107,19 +84,19 @@
                     <td>
                     <label for="breakfast" class="col-form-label">BREAKFAST</label>
                     </td>
-                    <td><input type="text" id="breakfast" class="form-control" aria-describedby="passwordHelpInline" readonly></td>   
+                    <td><input type="text" id="breakfast" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>   
                   </tr>
                   <tr>
                     <td>
                         <label for="lunch" class="col-form-label">LUNCH</label>
                     </td>
-                    <td><input type="text" id="lunch" class="form-control" aria-describedby="passwordHelpInline" readonly></td>
+                    <td><input type="text" id="lunch" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>
                   </tr>
                   <tr>
                     <td>
                         <label for="dinner" class="col-form-label">DINNER</label>
                     </td>
-                    <td><input type="text" id="dinner" class="form-control" aria-describedby="passwordHelpInline" readonly></td>
+                    <td><input type="text" id="dinner" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>
                   </tr>
                 </tbody>
               </table>

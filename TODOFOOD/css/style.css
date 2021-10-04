@@ -13,19 +13,20 @@
 	font-weight: normal;
 	font-style: normal;
 }
-body{font-family: 'Roboto-Regular';}
-header .navbar{padding: .5rem 0;}
-header nav.navbar .navbar-brand{color:#fff;}
-section.todo-outer {
+body{
+    font-family: 'Roboto-Regular';
+}
+
+section.food-outer {
     width: 100%;
     float: left;
     padding: 30px 0;
 }
-section.todo-outer h1 {
+section.food-outer h1 {
     font-size: 40px;
     margin-bottom: 20px;
 }
-.todo-inner {
+.food-inner {
     width: 100%;
     float: left;
     padding: 40px;
