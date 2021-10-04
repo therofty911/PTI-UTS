@@ -35,7 +35,7 @@ function showfood(){
     let html = '';
     let head = '';
     
-    let addedtasklist = document.getElementById("addedtasklist");
+    let addedfoodlist = document.getElementById("addedfoodlist");
     foodObj.forEach((item, index) => {
             foodCompleteValue = `<td>${item.food_list}</td>`;
         //}
@@ -50,7 +50,7 @@ function showfood(){
                     <td><button class="btn btn-danger" type="button" onclick="deleteitem(${index})"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/></svg>Delete</button></td>
                 </tr></tbody>`;
     });
-    addedtasklist.innerHTML = html;
+    addedfoodlist.innerHTML = html;
 
 }
 
@@ -108,8 +108,8 @@ function deleteitem(index){
     showfood();
 }
 // complete food
-let addedtasklist = document.getElementById("addedtasklist");
-    addedtasklist.addEventListener("click", function(e){
+let addedfoodlist = document.getElementById("addedfoodlist");
+    addedfoodlist.addEventListener("click", function(e){
         
         // showfood();
         let webfood = localStorage.getItem("localfood");
