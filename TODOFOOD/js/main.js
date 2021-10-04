@@ -36,11 +36,11 @@ function showtask(){
     
     let addedtasklist = document.getElementById("addedtasklist");
     taskObj.forEach((item, index) => {
-        if(item.completeStatus==true){
-            taskCompleteValue = `<td class="completed">${item.task_name}</td>`;
-        }else{
+        // if(item.completeStatus==true){
+        //     taskCompleteValue = `<td class="completed">${item.task_name}</td>`;
+        // }else{
             taskCompleteValue = `<td>${item.task_name}</td>`;
-        }
+        //}
         html += `<tbody>
                 <tr>
                     <th scope="row">${index+1}</th>
@@ -190,24 +190,39 @@ searchtextbox.addEventListener("input", function(){
 })
 
 
-
 function random(item){
     var ran = taskObj.length;
     var test = [];
-    for(var i = 0; i<3; i++){
-        var item = Math.floor(Math.random() * ran);
-        test.push(taskObj[item]);
-        console.log(test);
+    let webtask = localStorage.getItem("localtask");
+    if(webtask == null){
+        console.log("list is empty");
+        return false;
+    }
+    else{
+        for(var i = 0; i<3; i++){
+            var item = Math.floor(Math.random() * ran);
+            test.push(taskObj[item]);
+            console.log(test, test[1], test[2], test[3]);
+        }
+        addtorandom(test);
     }
 }
 
+function addtorandom(test){
+    // if( document.getElementById("breakfast").value.length == 0 ){ //cek di list random uda ada isi atau belum
+    //     let breakfast = document.getElementById("breakfast");
+    //     let lunch = document.getElementById("lunch");
+    //     let dinner = document.getElementById("dinner");
 
+    //     breakfast.innerHTML = test[1];
+    //     lunch.innerHTML = test[2];
+    //     dinner.innerHTML = test[3];
+    // }
+    //else{
+        document.getElementById("breakfast").value = test[0].task_name;
+        document.getElementById("lunch").value = test[1].task_name;
+        document.getElementById("dinner").value = test[2].task_name;
+   // }
 
-
-
-
-
-
-
-
+}
 
