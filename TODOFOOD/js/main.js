@@ -155,7 +155,7 @@ function random(item){
     let ran = tempcon.length;
     let test = [];
     // let validTable = document.getElementById("tableMenuBod");
-    if(webtask == null){
+    if(webtask = null){
         console.log("list is empty");
         return false;
     }
@@ -193,9 +193,14 @@ function addtorandom(test){
     // }
     //else{
         console.log(test);
-        document.getElementById("breakfast").value = test[0].task_name;
-        document.getElementById("lunch").value = test[1].task_name;
-        document.getElementById("dinner").value = test[2].task_name;
+        if(test[0] == null || test[1] == null || test[2] == null){
+            alert("Your list food is empty, fill it first");
+        }else {
+            document.getElementById("breakfast").value = test[0].task_name;
+            document.getElementById("lunch").value = test[1].task_name;
+            document.getElementById("dinner").value = test[2].task_name;
+
+        }
    // }
 
 }
