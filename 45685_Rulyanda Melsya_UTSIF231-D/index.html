@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>food List</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body style="background: linear-gradient(90deg, rgba(15,12,41,1) 0%, rgba(48,43,99,1) 54%, rgba(44,83,100,1) 100%);">
+  <div class="container">
+    <div class="row">
+        <div class="col-12 text-center py-5 judul">
+          <h1 style="color: white;">List Food & Drinks</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 card py-5" style="box-shadow: 0px 1px 63px 5px rgba(0,0,0,0.75);">
+            <div class="col-lg-6 center-block py-5 mx-auto center-block">
+                <div class="input-group mb-3">
+                    <form action="" id="formsubmit" class="row g-3 mx-auto justify-content-center">
+                        <!-- <div class="col-auto">
+                            <label for="foodName" class="form-label">Food Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" aria-describedby="basic-addon2" id="foodName">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary float-right">Create</button> 
+                        </div> -->
+                        <div class="col-5 col-lg-5">
+                          <input type="text" class="form-control" placeholder="Enter Food Name" aria-label="Enter Food Name" name="addfoodinput" id="addfoodinput" value="" aria-describedby="basic-addon2" >
+                          <input type="hidden" id="saveindex">
+                          </div>
+                          <div class="col-2 col-lg-2 ms-2">
+                            <button type="button" class="btn btn-primary" id="addfoodbtn">
+                              Create
+                            </button>
+                            <button type="button" class="btn btn-success" id="savefoodbtn" style="display: none;">
+                              Edit Food
+                            </button>
+                          </div>
+                          <div class="col-2 col-lg-2 ms-4">
+                            <button type="button" id="deleteallbtn" class="btn btn-danger">
+                              Delete All
+                            </button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- START FOR LIST FOOD TABLE -->
+            <div class="col-12 text-center">
+                <h3>LIST MAKANAN</h3>
+            </div>
+            <!-- START TABLE -->
+            <div class="col-md-12 mx-auto">
+                <table class="table table-dark mt-3 mb-0 col-12" id="addedfoodlist">
+                    <tbody class="text-center" id="tableMenuBod">
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Sandwhich</td>
+                            <td>
+                                <button class="btn btn-success me-lg-5 mb-1 me-2" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                                </svg>Edit</button>
+                                <button class="btn btn-danger" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg>Delete</button>
+                            </td>    
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Omelet</td>
+                            <td>
+                                <button class="btn btn-success me-lg-5 mb-1 me-2" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                                </svg>Edit</button>
+                                <button class="btn btn-danger" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg>Delete</button>
+                            </td>    
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- END TABLE -->
+            <!-- END FOR LIST FOOD TABLE -->
+            <!-- START FOR RANDOMIZE -->
+            <div class="col-md-2 col-7 center-block py-5 mx-auto center-block">
+              <button type="button" class="btn btn-primary ms-5" onclick="random()">RANDOMIZE</button>
+            </div>
+            <div class="col-md-5 col-12 mx-auto">
+              <table class="table">
+                <tbody class="text-center">
+                  <tr>
+                    <td>
+                    <label for="breakfast" class="col-form-label">BREAKFAST</label>
+                    </td>
+                    <td><input type="text" id="breakfast" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>   
+                  </tr>
+                  <tr>
+                    <td>
+                        <label for="lunch" class="col-form-label">LUNCH</label>
+                    </td>
+                    <td><input type="text" id="lunch" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <label for="dinner" class="col-form-label">DINNER</label>
+                    </td>
+                    <td><input type="text" id="dinner" class="form-control text-center" aria-describedby="passwordHelpInline" readonly style="text-transform: uppercase;font-weight: bolder;"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- END FOR RANDOMIZE -->
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

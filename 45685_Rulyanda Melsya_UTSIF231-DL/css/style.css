@@ -47,7 +47,6 @@ table tr td button {
 }
 .completed{text-decoration: line-through;}
 
-
 @media(max-width: 320px){
     table{
         position: relative;
