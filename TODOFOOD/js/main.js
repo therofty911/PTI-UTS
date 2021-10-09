@@ -71,7 +71,7 @@ function editfood(index){
         savefoodbtn.style.display="block";
         alert("You can edit the list food");
     } else {
-        alert("You have been cancled for edit the list");
+        alert("You have been canceled for edit the list");
     }
 }
 
@@ -95,6 +95,7 @@ savefoodbtn.addEventListener("click", function(){
     addfoodinput.value='';
     showfood();
 })
+
 // deleteitem
 function deleteitem(index){
     let webfood = localStorage.getItem("localfood");
@@ -105,7 +106,7 @@ function deleteitem(index){
         localStorage.setItem("localfood", JSON.stringify(foodObj));
       alert("Your list food has been deleted");
     } else {
-      alert("Remove food has been cancled");
+      alert("Remove food has been canceled");
     }
     showfood();
 }
@@ -127,7 +128,7 @@ deleteallbtn.addEventListener("click", function(){
             foodObj = [];
         }
     } else {
-      alert("Remove food has been cancled");
+      alert("Remove food has been canceled");
     }
     
     savefoodbtn.style.display="none";
@@ -166,7 +167,6 @@ let addedfoodlist = document.getElementById("addedfoodlist");
         showfood();
     }
 })
-
 
 // random list food
 function random(item){
@@ -224,4 +224,3 @@ function addtorandom(food){
    // }
 
 }
-
